@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReviewApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <navbar id="navbar">
+    <% if current_user %>
+        <div class="user"><div class="profile_pic"><%= image_tag(current_user.profile_pic ,style: "height:30px ; width: 30px; border-radius:50%" )%></div>
+        <div class="username"><%=User.getuser(current_user)%></div>
+        </div>
+        <div class="home_button"><%= link_to "Home" , movies_path %></div>
+        <div class="adddmovie"><%= link_to "Add Movie" , new_movie_path %></div>
+        <div class="sign_out"><%= link_to "Sign Out" , destroy_user_session_path  , method: :delete%></div>
+
+      <%end%>
+  </navbar>
+      <div style="padding-top:50px;"><%= yield %></div>
+
+    </body>
+  </html>

@@ -1,0 +1,5 @@
+
+   <div class="all_movie"><% @mv.each do |movie| %>
+    <%= render partial: "movieshow" , locals: { movie: movie} %>
+    <%end%>
+</div>

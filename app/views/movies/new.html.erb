@@ -1,0 +1,17 @@
+
+
+  <div class="new_movies">
+    <%= form_for(@movie) do |m| %>
+
+      <%= m.text_field :title , placeholder: " Title " %>
+
+       <br>
+      <%= m.text_area :description , placeholder: " Summary " %>
+        <br>
+
+      <%= m.file_field :poster %>
+
+      <%= m.submit %>
+    <%end%>
+
+  </div>

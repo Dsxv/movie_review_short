@@ -1,0 +1,44 @@
+
+/*
+=* require_self
+*/
+@import 'bootstrap' ;
+@import 'movies.scss' ;
+a:link{text-decoration: none;}
+body{
+background-image: url("bg.jpg"); background-size: cover;
+background-attachment: fixed;
+}
+#navbar:hover{
+  background-color: rgba(106, 106, 106 , .8) ;
+
+}
+#navbar {
+position: fixed ;
+transition: all 300ms ease-in-out;
+background-color: rgba(106, 106, 106 , .5) ;
+width:100vw;
+display:  flex ;
+
+margin-bottom: 100px;
+align-items: center;
+div{
+  padding:5px ;
+  font-family: Arial ;
+  font-size: .9em ;
+  transition: 300ms ease-in-out ;
+}
+
+.user{
+ display: flex ;
+ align-items: center;
+ cursor:  pointer ;
+}
+div:hover{
+transform: scale(1.05) ; ;}
+.home_button{
+  margin-left: 75vw;
+
+}
+
+}

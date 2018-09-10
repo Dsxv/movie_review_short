@@ -1,0 +1,8 @@
+<div id="<%movie.id%>" class="movie">
+  <%= link_to movie_path(movie.id) do%>
+  <h3><%= movie.title %></h3>
+  <%if movie.poster.attached? %>
+   <%= image_tag(movie.poster, style:"height:200px ; width: auto;") %>
+  <%end%>
+ <%end%>
+</div>

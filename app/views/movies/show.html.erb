@@ -1,0 +1,32 @@
+
+<div class="show_movie">
+
+   <h2><%= @movie.title %></h2>
+   <div class="movie_desc">
+
+
+     <div class="img_poster" id="poster">
+       <%= image_tag(@movie.poster , style:"height:300px ;widht:auto") %></div>
+
+      <div class="description">  <%=@movie.description%> </div></div>
+
+
+ <div class="addcomment">
+        <h3>Add Comment! </h3>
+        <%=form_for(@comment) do |f| %>
+          <input type="hidden" name="comment[movie_id]" value="<%=@movie.id%>" >
+          <%= f.text_field :content , autocomplete: "off" %> <br>
+          <%=f.submit "Submit" , style: "display:none;"%>
+         <%end%>
+      </div>
+<div class="comments">
+       <div class="all_comments">
+        <% @movie.comments.each do |c| %>
+          <div class="comment">
+          <span class="user"><%= image_tag(c.user.profile_pic , style:"height:25px ; width:25px; border-radius:50%;") %>
+            <%= c.user.name %></span>
+            <%=c.content %>
+          </div>
+         <%end%>
+       </div></div>
+ </div>
